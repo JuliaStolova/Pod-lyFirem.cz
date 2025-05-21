@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+    --color-primary: #1170D5;
+}
+
+.dropdown-option {
+    @apply px-4 py-2 text-gray-500 hover:bg-gray-100 cursor-pointer;
+}
+
+/* Prevents horizontal overflow */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
