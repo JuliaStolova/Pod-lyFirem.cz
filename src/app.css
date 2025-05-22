@@ -10,6 +10,12 @@
     @apply px-4 py-2 text-gray-500 hover:bg-gray-100 cursor-pointer;
 }
 
+.tag-small {
+   @apply border-solid border-2 px-1 py-0.5 rounded-xl opacity-80 font-medium;
+}
+.tag {
+   @apply border-solid border-2 px-2 py-1 rounded-xl opacity-80 font-medium;
+}
 /* Prevents horizontal overflow */
 html, body {
   max-width: 100vw;

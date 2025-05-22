@@ -1,107 +1,179 @@
 <script lang="ts">
-    import FirmCard from "$lib/components/FirmCard.svelte";
-    let count = 0;
-    let dropdownOpen = false;
+	import FirmCard from '$lib/components/FirmCard.svelte';
+	let count = 0;
+	let dropdownOpen = false;
 
-    const firm = {
-        name: "Firma ABC",
-        ownership: "100%",
-        economicRating: "A+",
-        specialization: "IT",
-        type: "S.R.O.",
-        year: "2020",
-        debt: "0 Kč",
-        price: "1 000 000 Kč",
-        taxes: "Plátce DPH",
-        ebtida: "200 000 Kč",
-        sales: "1 000 000 Kč",
-        revenue: "800 000 Kč",
-        lost: "0 Kč",
-        description: "Popis firmy ABC.",
-        location: "Praha, ČR"
-    };
+	const firm = {
+		name: 'Firma ABC',
+		ownership: 'Výhradní vlastnictví',
+		economicRating: 'A',
+		specialization: 'IT',
+		type: 's.r.o.',
+		year: '2020',
+		debt: 'Nemá žádné dluhy',
+		activity: 'ukončila činnost',
+		price: '1 000 000 Kč',
+		taxes: 'Plátce DPH',
+		ebtida: '200 000 Kč',
+		sales: '1 000 000 Kč',
+		revenue: '800 000 Kč',
+		lost: '0 Kč',
+		description: 'Popis firmy ABC.',
+		location: 'Praha, ČR'
+	};
+
+	const firm1 = {
+		name: 'Firma XYZ',
+		ownership: 'Částečné vlastnictví',
+		economicRating: 'B',
+		specialization: 'Finance',
+		type: 'a.s.',
+		year: '2018',
+		debt: 'Má dluhy',
+		activity: 'aktivní',
+		price: '2 000 000 Kč',
+		taxes: 'Neplátce DPH',
+		ebtida: ' ',
+		sales: '2 500 000 Kč',
+		revenue: ' ',
+		lost: ' ',
+		description: 'Popis firmy XYZ.',
+		location: 'Brno, ČR'
+	};
+	const firm2 = {
+		name: 'Firma DEF',
+		ownership: 'Společné vlastnictví',
+		economicRating: 'C',
+		specialization: 'Stavebnictví',
+		type: 's.r.o.',
+		year: '2015',
+		debt: 'Malé dluhy',
+		activity: 'aktivní',
+		price: '1 500 000 Kč',
+		taxes: 'Plátce DPH',
+		ebtida: '150 000 Kč',
+		sales: '1 800 000 Kč',
+		revenue: '',
+		lost: '',
+		description: 'Popis firmy DEF.',
+		location: 'Ostrava, ČR'
+	};
+
+	const firm3 = {
+		name: 'Firma GHI',
+		ownership: 'Výhradní vlastnictví',
+		economicRating: '?',
+		specialization: 'Zdravotnictví',
+		type: 'a.s.',
+		year: '2012',
+		debt: 'Nemá žádné dluhy',
+		activity: 'aktivní',
+		price: '3 000 000 Kč',
+		taxes: 'Plátce DPH',
+		ebtida: '400 000 Kč',
+		sales: '3 500 000 Kč',
+		revenue: '2 900 000 Kč',
+		lost: '0 Kč',
+		description: 'Popis firmy GHI.',
+		location: 'Plzeň, ČR'
+	};
 </script>
-
 
 <div class="flex flex-col items-center justify-center">
 	<div
-		class="flex h-fit w-full flex-col items-center justify-between md:gap-20 bg-primary pt-14 pb-14 text-white gap-10"
+		class="bg-primary flex h-fit w-full flex-col items-center justify-between gap-10 pt-14 pb-14 text-white md:gap-20"
 	>
-		<div class="flex w-full md:max-w-2xl sm:max-w-xl max-w-80 flex-col items-center justify-center text-center">
-			<h1 class="md:text-5xl text-4xl font-bold">Najděte ideální příležitost</h1>
-			<p class="mt-4 md:text-xl md:leading-10 leading-8">
+		<div
+			class="flex w-full max-w-80 flex-col items-center justify-center text-center sm:max-w-xl md:max-w-2xl"
+		>
+			<h1 class="text-4xl font-bold md:text-5xl">Najděte ideální příležitost</h1>
+			<p class="mt-4 leading-8 md:text-xl md:leading-10">
 				Hledáte podíl ve firmě, který odpovídá vaším investičním cílům? Podívejte se na aktuální
 				nabídky společností na prodej a objevte nové možnosti pro vaše podnikání.
 			</p>
 		</div>
-		<div class="flex h-fit w-full lg:max-w-3xl sm:max-w-120 max-w-80 px-4 mx-auto items-center justify-between gap-4 bg-white lg:p-4 p-2">
+		<div
+			class="mx-auto flex h-fit w-full max-w-80 items-center justify-between gap-4 bg-white p-2 px-4 sm:max-w-120 lg:max-w-3xl lg:p-4"
+		>
 			<input
 				type="text"
-				class="h-10 w-full rounded border border-none px-4 text-black focus:ring-2 focus:ring-primary focus:outline-none"
+				class="focus:ring-primary h-10 w-full rounded border border-none px-4 text-black focus:ring-2 focus:outline-none"
 				placeholder="Vyhledat..."
 			/>
-			<button class="cursor-pointer rounded bg-primary px-4 py-2 text-white"> Vyhledat </button>
+			<button class="bg-primary cursor-pointer rounded px-4 py-2 text-white"> Vyhledat </button>
 		</div>
 	</div>
 
-	<div class="flex flex-col sm:flex-row justify-between bg-gray-100 w-full h-fit p-6 lg:p-16">
-		<div class="flex flex-col gap-5 p-5 w-full">
-            <h1 class="text-primary uppercase font-bold">Filtrovat nabídky</h1>
-            <div>
-                <div class="flex justify-between items-center font-semibold cursor-pointer">
-                    <h2>Typ podílu</h2>
-                    <svg class="ml-2 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"/>
-                        </svg>
-                </div>
-                <hr class="border-t border-gray-400 my-4" />
-            </div>
-            <div>
-                <div class="flex justify-between items-center font-semibold cursor-pointer">
-                    <h2>Typ firmy</h2>
-                    <svg class="ml-2 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"/>
-                        </svg>
-                </div>
-                <hr class="border-t border-gray-400 my-4" />
-            </div>
-            <div>
-                <div class="flex justify-between items-center font-semibold cursor-pointer">
-                    <h2>Specializace</h2>
-                    <svg class="ml-2 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"/>
-                        </svg>
-                </div>
-            </div>
-        </div>
+	<div class="flex h-fit w-full flex-col justify-between bg-gray-100 p-6 sm:flex-row lg:p-16">
+		<div class="flex w-full max-w-md flex-col gap-5 p-5">
+			<h1 class="text-primary font-bold uppercase">Filtrovat nabídky</h1>
+			<div>
+				<div class="flex cursor-pointer items-center justify-between font-semibold">
+					<h2>Typ podílu</h2>
+					<svg class="ml-2 h-4 w-4 fill-current" viewBox="0 0 20 20">
+						<path
+							d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"
+						/>
+					</svg>
+				</div>
+				<hr class="my-4 border-t border-gray-400" />
+			</div>
+			<div>
+				<div class="flex cursor-pointer items-center justify-between font-semibold">
+					<h2>Typ firmy</h2>
+					<svg class="ml-2 h-4 w-4 fill-current" viewBox="0 0 20 20">
+						<path
+							d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"
+						/>
+					</svg>
+				</div>
+				<hr class="my-4 border-t border-gray-400" />
+			</div>
+			<div>
+				<div class="flex cursor-pointer items-center justify-between font-semibold">
+					<h2>Specializace</h2>
+					<svg class="ml-2 h-4 w-4 fill-current" viewBox="0 0 20 20">
+						<path
+							d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"
+						/>
+					</svg>
+				</div>
+			</div>
+		</div>
 
-        <div class="flex flex-col items-center w-full h-fit p-5">
+		<div class="flex h-fit w-full flex-col items-center p-5 gap-5">
+			<div class="flex w-full items-center justify-between gap-5">
+				<p class="text-gray-500">Zobrazeno: {count} firem</p>
+				<div class="relative">
+					<button
+						class="text-primary border-primary inline-flex items-center rounded border bg-white px-2 py-2 font-semibold"
+						onclick={() => (dropdownOpen = !dropdownOpen)}
+					>
+						<span>Seřadit podle</span>
+						<svg class="ml-2 h-4 w-4 fill-current" viewBox="0 0 20 20">
+							<path
+								d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"
+							/>
+						</svg>
+					</button>
+					{#if dropdownOpen}
+						<div class="absolute right-0 z-10 mt-2 w-48 rounded-lg border border-gray-200 bg-white">
+							<ul>
+								<li class="dropdown-option">Relevance</li>
+								<li class="dropdown-option">Nejlevnější</li>
+								<li class="dropdown-option">Nejdražší</li>
+							</ul>
+						</div>
+					{/if}
+				</div>
+			</div>
 
-            <div class="flex justify-between gap-10 w-full items-center">
-                <p class="text-gray-500">Zobrazeno: {count} firem</p>
-                <div class="relative">
-                    <button class="bg-white text-primary font-semibold py-2 px-4 border border-primary rounded inline-flex items-center" onclick={() => dropdownOpen = !dropdownOpen}>
-                        <span>Seřadit podle</span>
-                        <svg class="ml-2 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.424-3.422a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06z"/>
-                        </svg>
-                    </button>
-                    {#if dropdownOpen}
-                        <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg z-10">
-                            <ul>
-                                <li class="dropdown-option">Relevance</li>
-                                <li class="dropdown-option">Nejlevnější</li>
-                                <li class="dropdown-option">Nejdražší</li>
-                            </ul>
-                        </div>
-                    {/if}
-                </div>
-            </div>
-
-            <div>
-                <FirmCard firm={firm} />
-            </div>
-        </div>
-
+			<div class="flex w-full flex-col md:grid md:grid-cols-2 items-center justify-center gap-6 p-4">
+				<FirmCard {firm} />
+				<FirmCard firm={firm1} />
+				<FirmCard firm={firm2} />
+				<FirmCard firm={firm3} />
+			</div>
+		</div>
 	</div>
 </div>
