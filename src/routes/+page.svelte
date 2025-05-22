@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import FirmCard from '$lib/components/FirmCard.svelte';
 	import SortControls from '$lib/components/SortControls.svelte';
 	import { firms } from '$lib/data/firms';
@@ -77,12 +78,12 @@
 				{#if count === 1}
 					<p class="text-gray-500">Zobrazeno: {count} firma</p>
 				{:else if count <= 4}
-                    <p class="text-gray-500">Zobrazeno: {count} firmy</p>
+					<p class="text-gray-500">Zobrazeno: {count} firmy</p>
 				{:else if count > 4}
-                    <p class="text-gray-500">Zobrazeno: {count} firem</p>
-                {:else}
-                    <p class="text-gray-500">Nebyly nalezeny žádné firmy</p>
-                {/if}
+					<p class="text-gray-500">Zobrazeno: {count} firem</p>
+				{:else}
+					<p class="text-gray-500">Nebyly nalezeny žádné firmy</p>
+				{/if}
 
 				<SortControls {firms} bind:sortedFirms />
 			</div>
@@ -98,7 +99,7 @@
 			<div
 				class="border-primary text-primary flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed bg-white p-4 font-bold"
 			>
-				<p class="text-md">Zobrazit více nabídek</p>
+				<a class="text-md" href="/Developing">Zobrazit více nabídek</a>
 			</div>
 		</div>
 	</div>
