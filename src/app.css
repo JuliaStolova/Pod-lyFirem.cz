@@ -4,6 +4,7 @@
 
 @theme {
     --color-primary: #1170D5;
+    --breakpoint-md: 1170px;
 }
 
 .dropdown-option {

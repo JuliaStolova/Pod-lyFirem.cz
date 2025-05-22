@@ -104,8 +104,8 @@
 		</div>
 	</div>
 
-	<div class="flex h-fit w-full flex-col justify-between bg-gray-100 p-6 sm:flex-row lg:p-16">
-		<div class="flex w-full max-w-md flex-col gap-5 p-5">
+	<div class="flex h-fit w-full flex-col justify-between bg-gray-100 p-6 sm:flex-row lg:p-10 gap-10 md:gap-0">
+		<div class="flex w-full md:w-[40%] flex-col gap-5 p-5">
 			<h1 class="text-primary font-bold uppercase">Filtrovat nabídky</h1>
 			<div>
 				<div class="flex cursor-pointer items-center justify-between font-semibold">
@@ -141,7 +141,7 @@
 			</div>
 		</div>
 
-		<div class="flex h-fit w-full flex-col items-center p-5 gap-5">
+		<div class="flex h-fit w-full max-w-4xl flex-col items-center p-5 gap-5">
 			<div class="flex w-full items-center justify-between gap-5">
 				<p class="text-gray-500">Zobrazeno: {count} firem</p>
 				<div class="relative">
@@ -168,7 +168,7 @@
 				</div>
 			</div>
 
-			<div class="flex w-full flex-col md:grid md:grid-cols-2 items-center justify-center gap-6 p-4">
+			<div class="flex w-full flex-col md:grid md:grid-cols-2 items-center md:items-start justify-center gap-6">
 				<FirmCard {firm} />
 				<FirmCard firm={firm1} />
 				<FirmCard firm={firm2} />

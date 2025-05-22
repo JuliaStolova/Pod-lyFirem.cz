@@ -41,7 +41,7 @@
     $: ratingClass = ratingStyles[firm.economicRating] || { bg: 'bg-gray-300', text: 'text-gray-500' };
 </script>
 
-<div class="flex h-fit w-xs sm:w-sm cursor-pointer flex-col gap-5 bg-white p-7">
+<div class="flex h-fit w-xs sm:w-full md:w-sm lg:w-full  min-w-xs cursor-pointer flex-col gap-5 bg-white p-7">
     <div class="flex items-center justify-start gap-7">
         <!-- Rating circle with dynamic classes -->
         <div class="flex h-12 w-12 items-center justify-center rounded-full text-center text-xl font-bold {ratingClass.bg} {ratingClass.text}">
