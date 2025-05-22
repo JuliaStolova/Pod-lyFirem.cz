@@ -174,6 +174,11 @@
 				<FirmCard firm={firm2} />
 				<FirmCard firm={firm3} />
 			</div>
+
+            <div class="flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-primary bg-white p-4 text-primary font-bold">
+                <p class="text-md">Zobrazit více nabídek</p>
+
+            </div>
 		</div>
 	</div>
 </div>
