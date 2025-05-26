@@ -1,11 +1,11 @@
+import { drizzle } from 'drizzle-orm/better-sqlite3';
 import Database from 'better-sqlite3';
-import { mkdirSync } from 'fs';
 
-mkdirSync('db', { recursive: true });
-const db = new Database('db/firms.db');
+const sqlite = new Database('db/firms.db');
 
-db.exec(`
-CREATE TABLE IF NOT EXISTS firms (
+// Create all tables (Auth.js + your custom tables)
+sqlite.exec(`
+  CREATE TABLE IF NOT EXISTS firms (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     ownership TEXT NOT NULL,
@@ -24,23 +24,13 @@ CREATE TABLE IF NOT EXISTS firms (
     lost TEXT,
     description TEXT NOT NULL,
     location TEXT NOT NULL,
-    vatId TEXT NOR NULL,
+    vatId TEXT NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    userId INTEGER,
-    status TEXT DEFAULT 'pending' -- 'pending'/'allowed'/'rejected'
-    );
-
- CREATE TABLE IF NOT EXISTS users (
-    id TEXT PRIMARY KEY,
-    email TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
-    name TEXT,
-    surname TEXT,
-    verified BOOLEAN DEFAULT FALSE,
-    verification_token TEXT,
-    reset_token TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    userId TEXT,  -- Changed to TEXT to match users.id
+    status TEXT DEFAULT 'pending',
+    FOREIGN KEY (userId) REFERENCES users (id)
   );
-`)
+`);
 
-export default db;
+// Export Drizzle instance
+export const db = drizzle(sqlite);

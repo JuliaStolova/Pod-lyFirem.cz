@@ -1,4 +1,4 @@
-import db from '$lib/server/db';
+import { db } from '$lib/server/db';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { createTransport } from 'nodemailer';
