@@ -99,7 +99,7 @@
 			<div
 				class="border-primary text-primary flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed bg-white p-4 font-bold"
 			>
-				<a class="text-md" href="/Developing">Zobrazit více nabídek</a>
+				<a class="text-md" href="/developing">Zobrazit více nabídek</a>
 			</div>
 		</div>
 	</div>

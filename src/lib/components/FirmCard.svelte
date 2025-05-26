@@ -35,7 +35,6 @@
 		B: { bg: 'bg-blue-300', text: 'text-blue-500' },
 		C: { bg: 'bg-yellow-200', text: 'text-yellow-500' },
 		D: { bg: 'bg-orange-300', text: 'text-orange-500' },
-		E: { bg: 'bg-red-400', text: 'text-red-600' },
 		F: { bg: 'bg-red-500', text: 'text-red-700' }
 	};
 
