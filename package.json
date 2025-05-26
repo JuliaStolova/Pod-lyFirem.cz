@@ -34,12 +34,15 @@
 		"vite": "^6.2.6"
 	},
 	"dependencies": {
+		"@auth/core": "^0.39.1",
+		"@auth/drizzle-adapter": "^1.9.1",
 		"@auth/sveltekit": "^1.9.2",
 		"@iconify/icons-heroicons": "^1.2.9",
 		"@node-rs/argon2": "^2.0.2",
 		"bcryptjs": "^3.0.2",
 		"better-sqlite3": "^11.10.0",
 		"dotenv": "^16.5.0",
+		"drizzle-orm": "^0.43.1",
 		"nodemailer": "^6.10.1"
 	}
 }
