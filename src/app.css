@@ -3,22 +3,23 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-    --color-primary: #1170D5;
-    --breakpoint-md: 1170px;
+	--color-primary: #1170d5;
+	--breakpoint-md: 1170px;
 }
 
 .dropdown-option {
-    @apply px-4 py-2 text-gray-500 hover:bg-gray-100 cursor-pointer;
+	@apply cursor-pointer px-4 py-2 text-gray-500 hover:bg-gray-100;
 }
 
 .tag-small {
-   @apply border-solid border-2 px-1 py-0.5 rounded-xl opacity-80 font-medium;
+	@apply rounded-xl border-2 border-solid px-1 py-0.5 font-medium opacity-80;
 }
 .tag {
-   @apply border-solid border-2 px-2 py-1 rounded-xl opacity-80 font-medium;
+	@apply rounded-xl border-2 border-solid px-2 py-1 font-medium opacity-80;
 }
 /* Prevents horizontal overflow */
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
 }

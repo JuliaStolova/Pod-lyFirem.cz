@@ -15,7 +15,9 @@
 	</div>
 	<div class="display hidden items-center gap-4 text-gray-500 lg:flex">
 		<a href="/">Přidat inzerát</a>
-		<button class="bg-primary cursor-pointer rounded px-4 py-2 text-white"> <a href="auth/login">Přihlásit se</a> </button>
+		<button class="bg-primary cursor-pointer rounded px-4 py-2 text-white">
+			<a href="auth/login">Přihlásit se</a>
+		</button>
 	</div>
 	<div class="relative lg:hidden">
 		<button class="pr-2.5 pl-2.5" on:click={() => (isMobileMenuOpen = !isMobileMenuOpen)}>

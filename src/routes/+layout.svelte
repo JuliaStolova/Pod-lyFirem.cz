@@ -6,7 +6,9 @@
 	import { invalidateAll } from '$app/navigation';
 
 	onMount(() => {
-		const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange(() => {
 			invalidateAll();
 		});
 		return () => {
@@ -14,6 +16,7 @@
 		};
 	});
 </script>
-<Header/>
+
+<Header />
 
 <slot />
