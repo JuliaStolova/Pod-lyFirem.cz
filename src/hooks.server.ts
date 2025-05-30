@@ -1,15 +1,5 @@
-import { SvelteKitAuth } from "@auth/sveltekit";
-import Google from "@auth/core/providers/google";
+import "$lib/supabase";
 import type { Handle } from "@sveltejs/kit";
+import { getSupabase } from "@supabase/ssr";
 
-const auth = SvelteKitAuth({
-  providers: [
-    Google({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-  ],
-  trustHost: true,
-});
 
-export const handle: Handle = auth.handle;

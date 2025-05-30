@@ -1,4 +1,6 @@
 import type { DefaultSession } from "@auth/core/types";
+import type { TypedSupabaseClient } from "@supabase/supabase-js";
+import type { session } from "@supabase/supabase-js";
 
 declare module "@auth/core/types" {
   interface Session extends DefaultSession {
@@ -11,7 +13,8 @@ declare module "@auth/core/types" {
 declare global {
   namespace App {
     interface Locals {
-      auth: import("@auth/sveltekit").SvelteKitAuthSession;
+      sb: TypedSupabaseClient;
+      session: session | null;
     }
   }
 }

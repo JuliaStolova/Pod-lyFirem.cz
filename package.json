@@ -15,6 +15,8 @@
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^4.2.0",
+		"@supabase/auth-helpers-sveltekit": "^0.13.0",
+		"@supabase/ssr": "^0.6.1",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
@@ -39,6 +41,7 @@
 		"@auth/sveltekit": "^1.9.2",
 		"@iconify/icons-heroicons": "^1.2.9",
 		"@node-rs/argon2": "^2.0.2",
+		"@supabase/supabase-js": "^2.49.8",
 		"bcryptjs": "^3.0.2",
 		"better-sqlite3": "^11.10.0",
 		"dotenv": "^16.5.0",
